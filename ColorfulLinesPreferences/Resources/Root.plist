@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>items</key>
+	<array>
+
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>Enable Tweak</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<true/>
+			<key>defaults</key>
+			<string>com.yulkytulky.colorfullines</string>
+			<key>key</key>
+			<string>enabled</string>
+			<key>label</key>
+			<string>Enabled</string>
+			<key>PostNotification</key>
+			<string>com.yulkytulky.colorfullines/saved</string>
+		</dict>
+
+		<dict>
+		<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>Scrollbar</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<true/>
+			<key>defaults</key>
+			<string>com.yulkytulky.colorfullines</string>
+			<key>key</key>
+			<string>scrollColorEnabled</string>
+			<key>label</key>
+			<string>Custom Scrollbar Color</string>
+			<key>PostNotification</key>
+			<string>com.yulkytulky.colorfullines/saved</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSLinkCell</string>
+			<key>cellClass</key>
+			<string>SparkColourPickerCell</string>
+			<key>libsparkcolourpicker</key>
+			<dict>
+				<key>defaults</key>
+				<string>com.yulkytulky.colorfullines</string>
+				<key>fallback</key>
+				<string>#ffffff:0.5</string>
+				<key>alpha</key>
+				<true/>
+			</dict>
+			<key>key</key>
+			<string>scrollColor</string>
+			<key>label</key>
+			<string>Scrollbar Color</string>
+			<key>PostNotification</key>
+			<string>com.yulkytulky.colorfullines/saved</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<false/>
+			<key>defaults</key>
+			<string>com.yulkytulky.colorfullines</string>
+			<key>key</key>
+			<string>scrollHidden</string>
+			<key>label</key>
+			<string>Hide Scrollbar</string>
+			<key>PostNotification</key>
+			<string>com.yulkytulky.colorfullines/saved</string>
+		</dict>
+
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>Cursor</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<true/>
+			<key>defaults</key>
+			<string>com.yulkytulky.colorfullines</string>
+			<key>key</key>
+			<string>caretColorEnabled</string>
+			<key>label</key>
+			<string>Custom Cursor Color</string>
+			<key>PostNotification</key>
+			<string>com.yulkytulky.colorfullines/saved</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSLinkCell</string>
+			<key>cellClass</key>
+			<string>SparkColourPickerCell</string>
+			<key>libsparkcolourpicker</key>
+			<dict>
+				<key>defaults</key>
+				<string>com.yulkytulky.colorfullines</string>
+				<key>fallback</key>
+				<string>#0984ff:1.0</string>
+				<key>alpha</key>
+				<true/>
+			</dict>
+			<key>key</key>
+			<string>caretColor</string>
+			<key>label</key>
+			<string>Cursor Color</string>
+			<key>PostNotification</key>
+			<string>com.yulkytulky.colorfullines/saved</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<false/>
+			<key>defaults</key>
+			<string>com.yulkytulky.colorfullines</string>
+			<key>key</key>
+			<string>caretHidden</string>
+			<key>label</key>
+			<string>Hide Cursor</string>
+			<key>PostNotification</key>
+			<string>com.yulkytulky.colorfullines/saved</string>
+		</dict>
+
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSButtonCell</string>
+			<key>action</key>
+			<string>github</string>
+			<key>icon</key>
+			<string>github.png</string>
+			<key>label</key>
+			<string>Source Code  ❤️</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>footerText</key>
+			<string>Developed by YulkyTulky</string>
+		</dict>
+
+	</array>
+	<key>title</key>
+	<string>Colorful Lines</string>
+</dict>
+</plist>
