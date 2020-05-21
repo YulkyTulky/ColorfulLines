@@ -127,6 +127,41 @@
 			<key>cell</key>
 			<string>PSSwitchCell</string>
 			<key>default</key>
+			<true/>
+			<key>defaults</key>
+			<string>com.yulkytulky.colorfullines</string>
+			<key>key</key>
+			<string>floatingCaretColorEnabled</string>
+			<key>label</key>
+			<string>Custom Floating Cursor Color</string>
+			<key>PostNotification</key>
+			<string>com.yulkytulky.colorfullines/saved</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSLinkCell</string>
+			<key>cellClass</key>
+			<string>SparkColourPickerCell</string>
+			<key>libsparkcolourpicker</key>
+			<dict>
+				<key>defaults</key>
+				<string>com.yulkytulky.colorfullines</string>
+				<key>fallback</key>
+				<string>#0984ff:1.0</string>
+				<key>alpha</key>
+				<true/>
+			</dict>
+			<key>key</key>
+			<string>floatingCaretColor</string>
+			<key>label</key>
+			<string>Floating Cursor Color</string>
+			<key>PostNotification</key>
+			<string>com.yulkytulky.colorfullines/saved</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
 			<false/>
 			<key>defaults</key>
 			<string>com.yulkytulky.colorfullines</string>
@@ -134,6 +169,90 @@
 			<string>caretHidden</string>
 			<key>label</key>
 			<string>Hide Cursor</string>
+			<key>PostNotification</key>
+			<string>com.yulkytulky.colorfullines/saved</string>
+		</dict>
+
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>Selection Bar</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<true/>
+			<key>defaults</key>
+			<string>com.yulkytulky.colorfullines</string>
+			<key>key</key>
+			<string>selectionBarColorEnabled</string>
+			<key>label</key>
+			<string>Custom Selection Bar Color</string>
+			<key>PostNotification</key>
+			<string>com.yulkytulky.colorfullines/saved</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSLinkCell</string>
+			<key>cellClass</key>
+			<string>SparkColourPickerCell</string>
+			<key>libsparkcolourpicker</key>
+			<dict>
+				<key>defaults</key>
+				<string>com.yulkytulky.colorfullines</string>
+				<key>fallback</key>
+				<string>#0984ff:1.0</string>
+				<key>alpha</key>
+				<true/>
+			</dict>
+			<key>key</key>
+			<string>selectionBarColor</string>
+			<key>label</key>
+			<string>Selection Bar Color</string>
+			<key>PostNotification</key>
+			<string>com.yulkytulky.colorfullines/saved</string>
+		</dict>
+
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>Highlight</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<true/>
+			<key>defaults</key>
+			<string>com.yulkytulky.colorfullines</string>
+			<key>key</key>
+			<string>highlightColorEnabled</string>
+			<key>label</key>
+			<string>Custom Highlight Color</string>
+			<key>PostNotification</key>
+			<string>com.yulkytulky.colorfullines/saved</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSLinkCell</string>
+			<key>cellClass</key>
+			<string>SparkColourPickerCell</string>
+			<key>libsparkcolourpicker</key>
+			<dict>
+				<key>defaults</key>
+				<string>com.yulkytulky.colorfullines</string>
+				<key>fallback</key>
+				<string>#0984ff:0.1</string>
+				<key>alpha</key>
+				<true/>
+			</dict>
+			<key>key</key>
+			<string>highlightColor</string>
+			<key>label</key>
+			<string>Highlight Color</string>
 			<key>PostNotification</key>
 			<string>com.yulkytulky.colorfullines/saved</string>
 		</dict>
