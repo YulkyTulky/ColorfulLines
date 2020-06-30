@@ -1,8 +1,5 @@
 #import "SparkColourPickerUtils.h"
 
-//--Macros--//
-#define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
-
 //--Preferences Variables--//
 BOOL enabled;
 BOOL scrollColorEnabled;

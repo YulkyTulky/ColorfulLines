@@ -31,7 +31,7 @@
 
 - (void)github {
 	
-	[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://github.com/YulkyTulky/ColorfulLines"]];
+	[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://github.com/YulkyTulky/Colorful-Lines"]];
 
 }
 

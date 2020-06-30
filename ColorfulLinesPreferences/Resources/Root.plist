@@ -22,6 +22,8 @@
 			<string>enabled</string>
 			<key>label</key>
 			<string>Enabled</string>
+			<key>icon</key>
+			<string>icon.png</string>
 			<key>PostNotification</key>
 			<string>com.yulkytulky.colorfullines/saved</string>
 		</dict>

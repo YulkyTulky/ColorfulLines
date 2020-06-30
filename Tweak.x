@@ -114,7 +114,7 @@
 
 }
 
--(UIColor *)selectionHighlightColor { // Set highlight color
+- (UIColor *)selectionHighlightColor { // Set highlight color
 
 	if (highlightColorEnabled && enabled) {
 		return highlightColor;
@@ -157,11 +157,9 @@ static void loadPrefs() {
 
 	%init;
 
-	if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"13.0")) {  // CODE USED FROM https://stackoverflow.com/a/7848772
-		%init(iOS13);
-	} else {
-		%init(iOS12);
-	}
+	// I can initialize both of these without adverse effects! (fixed bug here in version 1.2)
+	%init(iOS12);
+	%init(iOS13);
 
 }
 // If you're reading this, I hope you had a jolly time reading my code! Have a wonderful day!
