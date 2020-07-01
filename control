@@ -1,7 +1,7 @@
 Package: com.yulkytulky.colorfullines
 Name: Colorful Lines
 Depends: mobilesubstrate, preferenceloader, com.spark.libsparkcolourpicker
-Version: 1.2
+Version: 1.2.1
 Architecture: iphoneos-arm
 Description: Customize the scrollbar and cursor! Colorful Lines provides coloring (including custom opacity) and hiding options for the iOS scrollbar and cursor. Also includes custom options for the text selection bars and highlight view! Built for iOS 12 and 13.
 Maintainer: YulkyTulky

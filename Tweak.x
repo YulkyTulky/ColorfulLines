@@ -10,7 +10,7 @@
 	%orig;
 
 	if (scrollHidden && enabled) {
-		self.hidden = YES;
+		[self setHidden:YES];
 	}
 
 }
@@ -39,7 +39,7 @@
 	%orig;
 
 	if (scrollHidden && enabled) {
-		self.hidden = YES;
+		[self setHidden:YES];
 	}
 
 }
@@ -51,9 +51,9 @@
 	if (scrollColorEnabled && enabled) {
 		if ([view isMemberOfClass:[UIImageView class]] && CGSizeEqualToSize(view.frame.size, CGSizeMake(2.5, 2.5))) {  // CODE USED FROM https://github.com/shepgoba/ColorScroll/blob/master/Tweak.xm
 			UIImageView *imgView = (UIImageView *)view;
-			imgView.backgroundColor = scrollColor;
-			imgView.layer.cornerRadius = 1.5;
-			imgView.image = nil;
+			[imgView setBackgroundColor:scrollColor];
+			[[imgView layer] setCornerRadius:1.5];
+			[imgView setImage:nil];
 		}
 	}
 
@@ -157,9 +157,12 @@ static void loadPrefs() {
 
 	%init;
 
-	// I can initialize both of these without adverse effects! (fixed bug here in version 1.2)
-	%init(iOS12);
-	%init(iOS13);
+	// fixed bug here in version 1.2
+	if (@available(iOS 13.0, *)) {
+		%init(iOS13);
+	} else {
+		%init(iOS12);
+	}
 
 }
 // If you're reading this, I hope you had a jolly time reading my code! Have a wonderful day!
