@@ -82,7 +82,7 @@
 - (id)caretViewColor {  // Set cursor color
 
 	if (caretColorEnabled && enabled) {
-		return cursorColorFromIcon ? (iconColor ? [iconColor colorWithAlphaComponent:0.5] : %orig) : caretColor;
+		return cursorColorFromIcon ? (iconColor ? iconColor : %orig) : caretColor;
 	} else {
 		return %orig;
 	}
@@ -92,7 +92,7 @@
 - (id)floatingCaretViewColor {  // Set floating cursor color
 
 	if (floatingCaretColorEnabled && enabled) {
-		return floatingCursorColorFromIcon ? (iconColor ? [iconColor colorWithAlphaComponent:0.5] : %orig) : floatingCaretColor;
+		return floatingCursorColorFromIcon ? (iconColor ? iconColor : %orig) : floatingCaretColor;
 	} else {
 		return %orig;  // Note that %orig here will return custom cursor color if enabled
 	}
@@ -107,7 +107,7 @@
 - (UIColor *)selectionBarColor {  // Set selection bar color
 
 	if (selectionBarColorEnabled && enabled) {
-		return selectionBarColorFromIcon ? (iconColor ? [iconColor colorWithAlphaComponent:0.5] : %orig) : selectionBarColor;
+		return selectionBarColorFromIcon ? (iconColor ? iconColor : %orig) : selectionBarColor;
 	} else {
 		return %orig;
 	}
