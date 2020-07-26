@@ -18,7 +18,7 @@
 - (id)_colorForStyle:(long long)arg1 {  // Set scrollbar color
 
 	if (scrollColorEnabled && enabled) {
-		return scrollColor;
+		return scrollColorFromIcon ? (iconColor ? [iconColor colorWithAlphaComponent:0.5] : %orig) : scrollColor;
 	} else {
 		return %orig;
 	}
@@ -51,7 +51,7 @@
 	if (scrollColorEnabled && enabled) {
 		if ([view isMemberOfClass:[UIImageView class]] && CGSizeEqualToSize(view.frame.size, CGSizeMake(2.5, 2.5))) {  // CODE USED FROM https://github.com/shepgoba/ColorScroll/blob/master/Tweak.xm
 			UIImageView *imgView = (UIImageView *)view;
-			[imgView setBackgroundColor:scrollColor];
+			[imgView setBackgroundColor:scrollColorFromIcon ? (iconColor ? [iconColor colorWithAlphaComponent:0.5] : [UIColor colorWithRed:1.00 green:1.00 blue:1.00 alpha:0.5]) : scrollColor];
 			[[imgView layer] setCornerRadius:1.5];
 			[imgView setImage:nil];
 		}
@@ -82,7 +82,7 @@
 - (id)caretViewColor {  // Set cursor color
 
 	if (caretColorEnabled && enabled) {
-		return caretColor;
+		return cursorColorFromIcon ? (iconColor ? [iconColor colorWithAlphaComponent:0.5] : %orig) : caretColor;
 	} else {
 		return %orig;
 	}
@@ -92,7 +92,7 @@
 - (id)floatingCaretViewColor {  // Set floating cursor color
 
 	if (floatingCaretColorEnabled && enabled) {
-		return floatingCaretColor;
+		return floatingCursorColorFromIcon ? (iconColor ? [iconColor colorWithAlphaComponent:0.5] : %orig) : floatingCaretColor;
 	} else {
 		return %orig;  // Note that %orig here will return custom cursor color if enabled
 	}
@@ -107,7 +107,7 @@
 - (UIColor *)selectionBarColor {  // Set selection bar color
 
 	if (selectionBarColorEnabled && enabled) {
-		return selectionBarColor;
+		return selectionBarColorFromIcon ? (iconColor ? [iconColor colorWithAlphaComponent:0.5] : %orig) : selectionBarColor;
 	} else {
 		return %orig;
 	}
@@ -117,7 +117,7 @@
 - (UIColor *)selectionHighlightColor { // Set highlight color
 
 	if (highlightColorEnabled && enabled) {
-		return highlightColor;
+		return highlightColorFromIcon ? [iconColor colorWithAlphaComponent:0.1] : highlightColor;
 	} else {
 		return %orig;
 	}
@@ -133,20 +133,36 @@ static void loadPrefs() {
 	enabled = [preferences objectForKey:@"enabled"] ? [[preferences objectForKey:@"enabled"] boolValue] : YES;
 
 	scrollColorEnabled = [preferences objectForKey:@"scrollColorEnabled"] ? [[preferences objectForKey:@"scrollColorEnabled"] boolValue] : YES;
+	scrollColorFromIcon = [preferences objectForKey:@"scrollColorFromIcon"] ? [[preferences objectForKey:@"scrollColorFromIcon"] boolValue] : NO;
 	scrollColor = [SparkColourPickerUtils colourWithString: [preferences objectForKey:@"scrollColor"] withFallback: @"#ffffff:0.5"];
 	scrollHidden = [preferences objectForKey:@"scrollHidden"] ? [[preferences objectForKey:@"scrollHidden"] boolValue] : NO;
 
 	caretColorEnabled = [preferences objectForKey:@"caretColorEnabled"] ? [[preferences objectForKey:@"caretColorEnabled"] boolValue] : YES;
+	cursorColorFromIcon = [preferences objectForKey:@"cursorColorFromIcon"] ? [[preferences objectForKey:@"cursorColorFromIcon"] boolValue] : NO;
 	caretColor = [SparkColourPickerUtils colourWithString: [preferences objectForKey:@"caretColor"] withFallback: @"#0984ff:1.0"];
-	floatingCaretColorEnabled = [preferences objectForKey:@"floatingCaretColorEnabled"] ? [[preferences objectForKey:@"floatingCaretColorEnabled"] boolValue] : YES;
-	floatingCaretColor = [SparkColourPickerUtils colourWithString: [preferences objectForKey:@"floatingCaretColor"] withFallback: @"#0984ff:1.0"];
 	caretHidden = [preferences objectForKey:@"caretHidden"] ? [[preferences objectForKey:@"caretHidden"] boolValue] : NO;
 
+	floatingCaretColorEnabled = [preferences objectForKey:@"floatingCaretColorEnabled"] ? [[preferences objectForKey:@"floatingCaretColorEnabled"] boolValue] : YES;
+	floatingCursorColorFromIcon = [preferences objectForKey:@"floatingCursorColorFromIcon"] ? [[preferences objectForKey:@"floatingCursorColorFromIcon"] boolValue] : NO;
+	floatingCaretColor = [SparkColourPickerUtils colourWithString: [preferences objectForKey:@"floatingCaretColor"] withFallback: @"#0984ff:1.0"];
+
 	selectionBarColorEnabled = [preferences objectForKey:@"selectionBarColorEnabled"] ? [[preferences objectForKey:@"selectionBarColorEnabled"] boolValue] : YES;
+	selectionBarColorFromIcon = [preferences objectForKey:@"selectionBarColorFromIcon"] ? [[preferences objectForKey:@"selectionBarColorFromIcon"] boolValue] : NO;
 	selectionBarColor = [SparkColourPickerUtils colourWithString: [preferences objectForKey:@"selectionBarColor"] withFallback: @"#0984ff:1.0"];
 
 	highlightColorEnabled = [preferences objectForKey:@"highlightColorEnabled"] ? [[preferences objectForKey:@"highlightColorEnabled"] boolValue] : YES;
+	highlightColorFromIcon = [preferences objectForKey:@"highlightColorFromIcon"] ? [[preferences objectForKey:@"highlightColorFromIcon"] boolValue] : NO;
 	highlightColor = [SparkColourPickerUtils colourWithString: [preferences objectForKey:@"highlightColor"] withFallback: @"#0984ff:0.1"];
+
+}
+
+static void loadAverageColor() {
+
+	NSString *bundleID = [[NSBundle mainBundle] bundleIdentifier];
+	if (!([bundleID isEqualToString:@"com.apple.springboard"] || [bundleID isEqualToString:@"com.apple.Spotlight"])) {
+		UIImage *icon = [UIImage _applicationIconImageForBundleIdentifier:bundleID format:2 scale:2];
+		iconColor = [icon averageColor];
+	}
 
 }
 
@@ -154,10 +170,11 @@ static void loadPrefs() {
 
 	loadPrefs(); // Load preferences into variables
 	CFNotificationCenterAddObserver(CFNotificationCenterGetDarwinNotifyCenter(), NULL, (CFNotificationCallback)loadPrefs, CFSTR("com.yulkytulky.colorfullines/saved"), NULL, CFNotificationSuspensionBehaviorCoalesce); // Listen for preference changes
+	loadAverageColor();
 
 	%init;
 
-	// fixed bug here in version 1.2
+	// fixed bug here in version 1.2 & 1.2.1
 	if (@available(iOS 13.0, *)) {
 		%init(iOS13);
 	} else {

@@ -14,6 +14,8 @@
 		<dict>
 			<key>cell</key>
 			<string>PSSwitchCell</string>
+			<key>cellClass</key>
+			<string>CFLSwitchCell</string>
 			<key>default</key>
 			<true/>
 			<key>defaults</key>
@@ -37,6 +39,8 @@
 		<dict>
 			<key>cell</key>
 			<string>PSSwitchCell</string>
+			<key>cellClass</key>
+			<string>CFLSwitchCell</string>
 			<key>default</key>
 			<true/>
 			<key>defaults</key>
@@ -45,6 +49,24 @@
 			<string>scrollColorEnabled</string>
 			<key>label</key>
 			<string>Custom Scrollbar Color</string>
+			<key>PostNotification</key>
+			<string>com.yulkytulky.colorfullines/saved</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>cellClass</key>
+			<string>CFLSwitchCell</string>
+			<key>default</key>
+			<false/>
+			<key>defaults</key>
+			<string>com.yulkytulky.colorfullines</string>
+			<key>key</key>
+			<string>scrollColorFromIcon</string>
+			<key>label</key>
+			<string>Scrollbar Color From Icon</string>
+			<key>id</key>
+			<string>100</string>
 			<key>PostNotification</key>
 			<string>com.yulkytulky.colorfullines/saved</string>
 		</dict>
@@ -66,12 +88,16 @@
 			<string>scrollColor</string>
 			<key>label</key>
 			<string>Scrollbar Color</string>
+			<key>id</key>
+			<string>101</string>
 			<key>PostNotification</key>
 			<string>com.yulkytulky.colorfullines/saved</string>
 		</dict>
 		<dict>
 			<key>cell</key>
 			<string>PSSwitchCell</string>
+			<key>cellClass</key>
+			<string>CFLSwitchCell</string>
 			<key>default</key>
 			<false/>
 			<key>defaults</key>
@@ -93,6 +119,8 @@
 		<dict>
 			<key>cell</key>
 			<string>PSSwitchCell</string>
+			<key>cellClass</key>
+			<string>CFLSwitchCell</string>
 			<key>default</key>
 			<true/>
 			<key>defaults</key>
@@ -101,6 +129,24 @@
 			<string>caretColorEnabled</string>
 			<key>label</key>
 			<string>Custom Cursor Color</string>
+			<key>PostNotification</key>
+			<string>com.yulkytulky.colorfullines/saved</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>cellClass</key>
+			<string>CFLSwitchCell</string>
+			<key>default</key>
+			<false/>
+			<key>defaults</key>
+			<string>com.yulkytulky.colorfullines</string>
+			<key>key</key>
+			<string>cursorColorFromIcon</string>
+			<key>label</key>
+			<string>Cursor Color From Icon</string>
+			<key>id</key>
+			<string>200</string>
 			<key>PostNotification</key>
 			<string>com.yulkytulky.colorfullines/saved</string>
 		</dict>
@@ -122,12 +168,39 @@
 			<string>caretColor</string>
 			<key>label</key>
 			<string>Cursor Color</string>
+			<key>id</key>
+			<string>201</string>
 			<key>PostNotification</key>
 			<string>com.yulkytulky.colorfullines/saved</string>
 		</dict>
 		<dict>
 			<key>cell</key>
 			<string>PSSwitchCell</string>
+			<key>cellClass</key>
+			<string>CFLSwitchCell</string>
+			<key>default</key>
+			<false/>
+			<key>defaults</key>
+			<string>com.yulkytulky.colorfullines</string>
+			<key>key</key>
+			<string>caretHidden</string>
+			<key>label</key>
+			<string>Hide Cursor</string>
+			<key>PostNotification</key>
+			<string>com.yulkytulky.colorfullines/saved</string>
+		</dict>
+
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>Floating Cursor</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>cellClass</key>
+			<string>CFLSwitchCell</string>
 			<key>default</key>
 			<true/>
 			<key>defaults</key>
@@ -136,6 +209,24 @@
 			<string>floatingCaretColorEnabled</string>
 			<key>label</key>
 			<string>Custom Floating Cursor Color</string>
+			<key>PostNotification</key>
+			<string>com.yulkytulky.colorfullines/saved</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>cellClass</key>
+			<string>CFLSwitchCell</string>
+			<key>default</key>
+			<false/>
+			<key>defaults</key>
+			<string>com.yulkytulky.colorfullines</string>
+			<key>key</key>
+			<string>floatingCursorColorFromIcon</string>
+			<key>label</key>
+			<string>Floating Cursor Color From Icon</string>
+			<key>id</key>
+			<string>300</string>
 			<key>PostNotification</key>
 			<string>com.yulkytulky.colorfullines/saved</string>
 		</dict>
@@ -157,20 +248,8 @@
 			<string>floatingCaretColor</string>
 			<key>label</key>
 			<string>Floating Cursor Color</string>
-			<key>PostNotification</key>
-			<string>com.yulkytulky.colorfullines/saved</string>
-		</dict>
-		<dict>
-			<key>cell</key>
-			<string>PSSwitchCell</string>
-			<key>default</key>
-			<false/>
-			<key>defaults</key>
-			<string>com.yulkytulky.colorfullines</string>
-			<key>key</key>
-			<string>caretHidden</string>
-			<key>label</key>
-			<string>Hide Cursor</string>
+			<key>id</key>
+			<string>301</string>
 			<key>PostNotification</key>
 			<string>com.yulkytulky.colorfullines/saved</string>
 		</dict>
@@ -184,6 +263,8 @@
 		<dict>
 			<key>cell</key>
 			<string>PSSwitchCell</string>
+			<key>cellClass</key>
+			<string>CFLSwitchCell</string>
 			<key>default</key>
 			<true/>
 			<key>defaults</key>
@@ -192,6 +273,24 @@
 			<string>selectionBarColorEnabled</string>
 			<key>label</key>
 			<string>Custom Selection Bar Color</string>
+			<key>PostNotification</key>
+			<string>com.yulkytulky.colorfullines/saved</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>cellClass</key>
+			<string>CFLSwitchCell</string>
+			<key>default</key>
+			<false/>
+			<key>defaults</key>
+			<string>com.yulkytulky.colorfullines</string>
+			<key>key</key>
+			<string>selectionBarColorFromIcon</string>
+			<key>label</key>
+			<string>Selection Bar Color From Icon</string>
+			<key>id</key>
+			<string>400</string>
 			<key>PostNotification</key>
 			<string>com.yulkytulky.colorfullines/saved</string>
 		</dict>
@@ -213,6 +312,8 @@
 			<string>selectionBarColor</string>
 			<key>label</key>
 			<string>Selection Bar Color</string>
+			<key>id</key>
+			<string>401</string>
 			<key>PostNotification</key>
 			<string>com.yulkytulky.colorfullines/saved</string>
 		</dict>
@@ -226,6 +327,8 @@
 		<dict>
 			<key>cell</key>
 			<string>PSSwitchCell</string>
+			<key>cellClass</key>
+			<string>CFLSwitchCell</string>
 			<key>default</key>
 			<true/>
 			<key>defaults</key>
@@ -234,6 +337,24 @@
 			<string>highlightColorEnabled</string>
 			<key>label</key>
 			<string>Custom Highlight Color</string>
+			<key>PostNotification</key>
+			<string>com.yulkytulky.colorfullines/saved</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>cellClass</key>
+			<string>CFLSwitchCell</string>
+			<key>default</key>
+			<false/>
+			<key>defaults</key>
+			<string>com.yulkytulky.colorfullines</string>
+			<key>key</key>
+			<string>highlightColorFromIcon</string>
+			<key>label</key>
+			<string>Highlight Color From Icon</string>
+			<key>id</key>
+			<string>500</string>
 			<key>PostNotification</key>
 			<string>com.yulkytulky.colorfullines/saved</string>
 		</dict>
@@ -255,6 +376,8 @@
 			<string>highlightColor</string>
 			<key>label</key>
 			<string>Highlight Color</string>
+			<key>id</key>
+			<string>501</string>
 			<key>PostNotification</key>
 			<string>com.yulkytulky.colorfullines/saved</string>
 		</dict>
@@ -262,6 +385,8 @@
 		<dict>
 			<key>cell</key>
 			<string>PSGroupCell</string>
+			<key>footerText</key>
+			<string>Developed by YulkyTulky</string>
 		</dict>
 		<dict>
 			<key>cell</key>
@@ -275,9 +400,13 @@
 		</dict>
 		<dict>
 			<key>cell</key>
-			<string>PSGroupCell</string>
-			<key>footerText</key>
-			<string>Developed by YulkyTulky</string>
+			<string>PSButtonCell</string>
+			<key>action</key>
+			<string>discord</string>
+			<key>icon</key>
+			<string>discord.png</string>
+			<key>label</key>
+			<string>Discord Server</string>
 		</dict>
 
 	</array>

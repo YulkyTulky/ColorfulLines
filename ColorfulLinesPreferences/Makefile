@@ -4,7 +4,7 @@ include $(THEOS)/makefiles/common.mk
 
 BUNDLE_NAME = ColorfulLinesPreferences
 
-ColorfulLinesPreferences_FILES = CFLRootListController.m
+ColorfulLinesPreferences_FILES = CFLRootListController.m CFLSwitchCell.m
 ColorfulLinesPreferences_INSTALL_PATH = /Library/PreferenceBundles
 ColorfulLinesPreferences_FRAMEWORKS = UIKit
 ColorfulLinesPreferences_PRIVATE_FRAMEWORKS = Preferences
